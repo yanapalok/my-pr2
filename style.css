@@ -1,0 +1,307 @@
+:root {
+            --primary-color: #8C6D53;
+            --primary-hover: #735741;
+            --error-color: #d9534f;
+            --bg-color: #F4EFEA;
+            --card-bg: #FFFFFF;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #CCCCCC;
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 40px 20px;
+            line-height: 1.5;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header p.subtitle {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        header p.description {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            flex: 1;
+            min-width: 320px;
+            max-width: 520px;
+        }
+
+        /* ---------- Форма ---------- */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="time"],
+        select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            font-size: 0.95rem;
+            background-color: #fff;
+            color: var(--text-main);
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .time-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .time-row .form-group {
+            flex: 1;
+        }
+
+        input:focus-visible, select:focus-visible {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(140, 109, 83, 0.15);
+        }
+
+        input:user-invalid, select:user-invalid {
+            border-color: var(--error-color);
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            padding: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .submit-btn:focus-visible {
+            outline: 2px solid var(--text-main);
+            outline-offset: 2px;
+        }
+
+        /* ---------- Медіа-блок ---------- */
+        .media-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* Радіокнопки керують слайдером: приховані, але доступні з клавіатури */
+        .zone-radio {
+            position: absolute;
+            opacity: 0;
+            width: 1px;
+            height: 1px;
+            pointer-events: none;
+        }
+
+        /* Слайди: показується лише активний */
+        .slide {
+            display: none;
+        }
+
+        #zone1:checked ~ .slides .slide-1,
+        #zone2:checked ~ .slides .slide-2,
+        #zone3:checked ~ .slides .slide-3,
+        #zone4:checked ~ .slides .slide-4 {
+            display: block;
+        }
+
+        .frame {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .frame img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        .slide figcaption {
+            margin-top: 12px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        .gallery-section h3, .amenities-section h3 {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        /* Мініатюри (label для радіокнопок) */
+        .thumbnail-grid {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 2px 2px 5px;
+        }
+
+        .thumbnail-grid label {
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .thumbnail-grid img {
+            width: 70px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 2px solid transparent;
+            display: block;
+            transition: border-color 0.2s;
+        }
+
+        .thumbnail-grid label:hover img {
+            border-color: var(--primary-color);
+        }
+
+        #zone1:checked ~ .gallery-section label[for="zone1"] img,
+        #zone2:checked ~ .gallery-section label[for="zone2"] img,
+        #zone3:checked ~ .gallery-section label[for="zone3"] img,
+        #zone4:checked ~ .gallery-section label[for="zone4"] img {
+            border-color: var(--primary-color);
+        }
+
+        /* Фокус з клавіатури (стрілки ← →) */
+        #zone1:focus-visible ~ .gallery-section label[for="zone1"] img,
+        #zone2:focus-visible ~ .gallery-section label[for="zone2"] img,
+        #zone3:focus-visible ~ .gallery-section label[for="zone3"] img,
+        #zone4:focus-visible ~ .gallery-section label[for="zone4"] img {
+            outline: 2px solid var(--text-main);
+            outline-offset: 2px;
+        }
+
+        .amenities-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+
+        /* Зручності: показується список активної зони */
+        .amenities-list {
+            display: none;
+        }
+
+        #zone1:checked ~ .amenities-section .amenities-1,
+        #zone2:checked ~ .amenities-section .amenities-2,
+        #zone3:checked ~ .amenities-section .amenities-3,
+        #zone4:checked ~ .amenities-section .amenities-4 {
+            display: grid;
+        }
+
+        .amenities-list li {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #F9F8F6;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        .amenities-list li::before {
+            content: "✓";
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+            .time-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .amenities-list {
+                grid-template-columns: 1fr;
+            }
+        }
