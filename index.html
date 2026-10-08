@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Коворкінг-простір — Забронюйте робоче місце</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <p class="subtitle">Коворкінг-простір</p>
+        <h1>Забронюйте робоче місце</h1>
+        <p class="description">Зарезервуйте затишне робоче місце на ваш наступний продуктивний день.</p>
+    </header>
+
+    <main class="container">
+        <!-- Форма бронювання -->
+        <section class="card" aria-labelledby="form-heading">
+            <h2 id="form-heading" style="display: none;">Форма бронювання</h2>
+            <form action="#" method="POST">
+
+                <div class="form-group">
+                    <label for="fullname">Ім'я та прізвище</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Анна Пальюк" required minlength="3">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="yanna.palyuk@gmail.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Дата</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="time-row">
+                    <div class="form-group">
+                        <label for="time-from">Час з</label>
+                        <input type="time" id="time-from" name="time_from" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time-to">До</label>
+                        <input type="time" id="time-to" name="time_to" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Локація</label>
+                    <select id="location" name="location" required>
+                        <option value="" disabled selected>Оберіть локацію</option>
+                        <option value="Шевченківський район">Шевченківський район</option>
+                        <option value="Оболонський район">Оболонський район</option>
+                        <option value="Дарницький район">Дарницький район</option>
+                        <option value="Печерський район">Печерський район</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="workspace-type">Тип робочого місця</label>
+                    <select id="workspace-type" name="workspace_type" required>
+                        <option value="" disabled selected>Оберіть робоче місце</option>
+                        <option value="Переговорна">Переговорна</option>
+                        <option value="Приватний офіс">Приватний офіс</option>
+                        <option value="Закріплене місце">Закріплене місце</option>
+                        <option value="Гнучке місце">Гнучке місце</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn">Підтвердити бронювання</button>
+            </form>
+        </section>
+
+        <!-- Медіа-блок -->
+        <section class="card media-card" aria-labelledby="media-heading">
+            <h2 id="media-heading" style="display: none;">Інформація про зону та зручності</h2>
+
+            <!-- Радіокнопки: мають бути прямими нащадками .media-card і стояти ПЕРЕД .slides та .gallery-section -->
+            <input type="radio" name="zone" id="zone1" class="zone-radio" checked aria-label="Переговорна">
+            <input type="radio" name="zone" id="zone2" class="zone-radio" aria-label="Приватний офіс">
+            <input type="radio" name="zone" id="zone3" class="zone-radio" aria-label="Закріплене місце">
+            <input type="radio" name="zone" id="zone4" class="zone-radio" aria-label="Гнучке місце">
+
+            <div class="slides">
+                <figure class="slide slide-1">
+                    <div class="frame">
+                        <span class="badge">Переговорна</span>
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Сучасна світла переговорна кімната коворкінгу з великим столом">
+                    </div>
+                    <figcaption><strong>Переговорна</strong> — до 20 місць, проєктор і відео-конференція.</figcaption>
+                </figure>
+
+                <figure class="slide slide-2">
+                    <div class="frame">
+                        <span class="badge">Приватний офіс</span>
+                        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80" alt="Приватний офіс з великими вікнами">
+                    </div>
+                    <figcaption><strong>Приватний офіс</strong> — окремий кабінет для команди або зосередженої роботи.</figcaption>
+                </figure>
+
+                <figure class="slide slide-3">
+                    <div class="frame">
+                        <span class="badge">Закріплене місце</span>
+                        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80" alt="Просторий open space з робочими столами">
+                    </div>
+                    <figcaption><strong>Закріплене місце</strong> — ваш стіл, який завжди чекає на вас.</figcaption>
+                </figure>
+
+                <figure class="slide slide-4">
+                    <div class="frame">
+                        <span class="badge">Гнучке місце</span>
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Гнучкі робочі місця в спільній зоні">
+                    </div>
+                    <figcaption><strong>Гнучке місце</strong> — оберіть будь-який вільний стіл на потрібний день.</figcaption>
+                </figure>
+            </div>
+
+            <div class="gallery-section">
+                <h3>Попередній перегляд зон</h3>
+                <div class="thumbnail-grid" role="group" aria-label="Галерея попереднього перегляду">
+                    <label for="zone1"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=200&q=80" alt="Переговорна"></label>
+                    <label for="zone2"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=200&q=80" alt="Приватний офіс"></label>
+                    <label for="zone3"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=200&q=80" alt="Закріплене місце"></label>
+                    <label for="zone4"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=200&q=80" alt="Гнучке місце"></label>
+                </div>
+            </div>
+
+            <div class="amenities-section">
+                <h3>Зручності</h3>
+                    <ul class="amenities-list amenities-1">
+                        <li>Проєктор</li>
+                        <li>Телевізор / великий екран</li>
+                        <li>Кондиціонер</li>
+                        <li>Магнітна дошка / фліпчарт</li>
+                        <li>До 20 місць</li>
+                        <li>Відео-конференція</li>
+                    </ul>
+                    <ul class="amenities-list amenities-2">
+                        <li>Двері із замком</li>
+                        <li>Власний кондиціонер</li>
+                        <li>Ергономічні крісла</li>
+                        <li>Шафа для документів</li>
+                        <li>До 6 місць</li>
+                        <li>Швидкий Wi-Fi</li>
+                    </ul>
+                    <ul class="amenities-list amenities-3">
+                        <li>Власний стіл</li>
+                        <li>Шафка з ключем</li>
+                        <li>Ергономічне крісло</li>
+                        <li>Доступ 24/7</li>
+                        <li>Швидкий Wi-Fi</li>
+                        <li>Кухня та кава</li>
+                    </ul>
+                    <ul class="amenities-list amenities-4">
+                        <li>Будь-який вільний стіл</li>
+                        <li>Розетки біля кожного місця</li>
+                        <li>Тиха зона</li>
+                        <li>Швидкий Wi-Fi</li>
+                        <li>Кухня та кава</li>
+                        <li>Оплата за день</li>
+                    </ul>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
