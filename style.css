@@ -144,7 +144,7 @@
             outline-offset: 2px;
         }
 
-        /* ---------- Медіа-блок ---------- */
+        
         .media-card {
             position: relative;
             display: flex;
@@ -153,7 +153,7 @@
             gap: 20px;
         }
 
-        /* Радіокнопки керують слайдером: приховані, але доступні з клавіатури */
+        
         .zone-radio {
             position: absolute;
             opacity: 0;
@@ -162,7 +162,7 @@
             pointer-events: none;
         }
 
-        /* Слайди: показується лише активний */
+      
         .slide {
             display: none;
         }
@@ -213,7 +213,7 @@
             margin-bottom: 10px;
         }
 
-        /* Мініатюри (label для радіокнопок) */
+       
         .thumbnail-grid {
             display: flex;
             gap: 10px;
@@ -247,7 +247,7 @@
             border-color: var(--primary-color);
         }
 
-        /* Фокус з клавіатури (стрілки ← →) */
+       
         #zone1:focus-visible ~ .gallery-section label[for="zone1"] img,
         #zone2:focus-visible ~ .gallery-section label[for="zone2"] img,
         #zone3:focus-visible ~ .gallery-section label[for="zone3"] img,
@@ -264,7 +264,7 @@
         }
 
 
-        /* Зручності: показується список активної зони */
+        
         .amenities-list {
             display: none;
         }
